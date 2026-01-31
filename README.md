@@ -43,10 +43,6 @@
 ## 🚀 Getting Started
 
 ### Prerequisites
-- **Android Studio Jellyfish** | 2023.3.1 이상 권장
-- **JDK 17** 이상
-- **Kotlin 2.x** (Compose Compiler 포함)
-
-### Installation
-```bash
-git clone
+- **Android Studio Otter 3 Feature Drop** | 2025.2.3
+- **JDK 17**
+- **Kotlin 2.3.0** (Compose Compiler 포함)
