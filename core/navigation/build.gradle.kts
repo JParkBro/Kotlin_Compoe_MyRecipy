@@ -7,5 +7,6 @@ android {
 }
 
 dependencies {
+    api(libs.androidx.navigation3.runtime)
     implementation(libs.bundles.navigation3)
 }
