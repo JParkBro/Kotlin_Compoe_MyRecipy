@@ -7,5 +7,5 @@ android {
 }
 
 dependencies {
-
+    implementation(projects.feature.shell.report.api)
 }

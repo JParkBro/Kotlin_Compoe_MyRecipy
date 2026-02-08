@@ -7,11 +7,15 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.jparkbro.core.navigation.Navigator
+import com.jparkbro.core.navigation.rememberNavigationState
 import com.jparkbro.core.ui.theme.MyRecipyTheme
+import com.jparkbro.myrecipy.navigation.AppNavDisplay
+import com.jparkbro.myrecipy.navigation.BottomNavigation
+import com.jparkbro.myrecipy.navigation.TOP_LEVEL_NAV_ITEMS
+import com.jparkbro.shell.history.api.HistoryNavKey
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,29 +23,25 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MyRecipyTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                val navigationState = rememberNavigationState(
+                    startKey = HistoryNavKey,
+                    topLevelKeys = TOP_LEVEL_NAV_ITEMS.keys,
+                )
+                val navigator = remember(navigationState) { Navigator(navigationState) }
+
+                AppNavDisplay(
+                    bottomNavigation = {
+                        BottomNavigation(
+                            currentKey = navigationState.currentTopLevelKey,
+                            onNavigate = { navigator.navigate(it) },
+                        )
+                    },
+                    navigationState = navigationState,
+                    navigator = navigator,
+                    modifier = Modifier
+                        .fillMaxSize(),
+                )
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MyRecipyTheme {
-        Greeting("Android")
     }
 }

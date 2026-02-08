@@ -23,10 +23,8 @@ class AndroidRoomConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
-                "implementation"(libs.findLibrary("androidx.room.runtime").get())
-                "implementation"(libs.findLibrary("androidx.room.ktx").get())
+                "implementation"(libs.findBundle("room").get())
                 "ksp"(libs.findLibrary("androidx.room.compiler").get())
-                "annotationProcessor"(libs.findLibrary("androidx.room.compiler").get())
             }
         }
     }

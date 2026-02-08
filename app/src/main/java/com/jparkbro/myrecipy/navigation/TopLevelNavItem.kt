@@ -23,7 +23,7 @@ val EDITOR = TopLevelNavItem(
 
 val HISTORY = TopLevelNavItem(
     selectedIcon = R.drawable.analytics_fill,
-    unselectedIcon = R.drawable.add_notes_outline,
+    unselectedIcon = R.drawable.analytics_outline,
     iconTextId = R.string.feature_history_api_title,
 )
 

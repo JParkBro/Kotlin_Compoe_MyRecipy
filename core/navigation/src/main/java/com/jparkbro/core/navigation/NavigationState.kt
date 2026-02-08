@@ -26,7 +26,7 @@ fun rememberNavigationState(
     // 최상위 레벨의 백스택 (예: 홈, 통계, 설정 등 탭 간의 이동 기록)
     val topLevelStack = rememberNavBackStack(startKey)
     // 각 최상위 키마다 개별적인 서브 백스택을 생성하여 상태를 유지함
-    val subStacks = topLevelStack.associateWith { key -> rememberNavBackStack(key) }
+    val subStacks = topLevelKeys.associateWith { key -> rememberNavBackStack(key) }
 
     return remember(startKey, topLevelKeys) {
         NavigationState(
