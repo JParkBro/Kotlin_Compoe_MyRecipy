@@ -150,8 +150,3 @@ navigation3 = [
     "androidx-lifecycle-viewmodel-navigation3",
     "androidx-material3-adaptive-navigation3"
 ]
-room = [
-    "androidx-room-compiler",
-    "androidx-room-ktx",
-    "androidx-room-runtime",
-]

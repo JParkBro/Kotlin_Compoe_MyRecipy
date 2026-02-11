@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feature_editor_api_title">Editor</string>
+    <string name="feature_history_api_title">History</string>
+    <string name="feature_calendar_api_title">Calendar</string>
+    <string name="feature_report_api_title">Report</string>
+    <string name="feature_settings_api_title">Settings</string>
+
+    <string name="nav_icon">네비게이션 아이콘</string>
+    <string name="arrow_back_icon">Back Stack 아이콘</string>
+
+</resources>

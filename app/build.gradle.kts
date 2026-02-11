@@ -15,6 +15,7 @@ dependencies {
     implementation(projects.core.database)
     implementation(projects.core.model)
     implementation(projects.core.navigation)
+    implementation(projects.core.designsystem)
     implementation(projects.core.ui)
     implementation(projects.feature.shell.calendar.api)
     implementation(projects.feature.shell.calendar.impl)
