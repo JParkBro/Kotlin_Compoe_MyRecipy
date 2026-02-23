@@ -1,5 +1,4 @@
 import com.android.build.api.dsl.LibraryExtension
-import com.jparkbro.convention.addNavigationDependencies
 import com.jparkbro.convention.addUiLayerDependencies
 import com.jparkbro.convention.configureAndroidCompose
 import org.gradle.api.Plugin

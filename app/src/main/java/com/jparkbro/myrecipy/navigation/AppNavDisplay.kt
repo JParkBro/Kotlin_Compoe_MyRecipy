@@ -5,6 +5,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.ui.NavDisplay
+import com.jparkbro.category.editor.impl.navigation.categoryEditorEntry
+import com.jparkbro.category.manage.impl.navigation.categoryManageEntry
 import com.jparkbro.core.navigation.NavigationState
 import com.jparkbro.core.navigation.Navigator
 import com.jparkbro.core.navigation.toEntries
@@ -22,11 +24,13 @@ fun AppNavDisplay(
     modifier: Modifier = Modifier,
 ) {
     val entryProvider = entryProvider<NavKey> {
-        editorEntry(navigator, bottomNavigation)
         historyEntry(navigator, bottomNavigation)
         calendarEntry(navigator, bottomNavigation)
+        editorEntry(navigator)
         reportEntry(navigator, bottomNavigation)
         settingsEntry(navigator, bottomNavigation)
+        categoryManageEntry(navigator)
+        categoryEditorEntry(navigator)
     }
 
     NavDisplay(

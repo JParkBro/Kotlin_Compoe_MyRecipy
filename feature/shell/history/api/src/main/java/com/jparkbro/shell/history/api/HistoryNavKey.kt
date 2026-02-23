@@ -6,7 +6,3 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 object HistoryNavKey : NavKey
-
-fun Navigator.navigateToHistory() {
-    navigate(HistoryNavKey)
-}

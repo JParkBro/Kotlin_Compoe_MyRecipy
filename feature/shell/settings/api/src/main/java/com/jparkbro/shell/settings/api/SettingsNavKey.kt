@@ -6,7 +6,3 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 object SettingsNavKey : NavKey
-
-fun Navigator.navigateToSettings() {
-    navigate(SettingsNavKey)
-}

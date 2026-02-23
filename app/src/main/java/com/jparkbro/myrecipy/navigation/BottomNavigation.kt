@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.navigation3.runtime.NavKey
+import com.jparkbro.core.designsystem.R
 
 @Composable
 internal fun BottomNavigation(
@@ -21,8 +22,8 @@ internal fun BottomNavigation(
     NavigationBar(
         modifier = modifier,
     ) {
-        TOP_LEVEL_NAV_ITEMS.forEach { (navKey, item) ->
-            val isSelected = currentKey == navKey
+        BOTTOM_NAV_ITEMS.forEach { (navKey, item) ->
+            val isSelected = currentKey::class == navKey::class
 
             NavigationBarItem(
                 selected = isSelected,
@@ -30,7 +31,7 @@ internal fun BottomNavigation(
                 icon = {
                     Icon(
                         imageVector = ImageVector.vectorResource(if (isSelected) item.selectedIcon else item.unselectedIcon),
-                        contentDescription = null,
+                        contentDescription = stringResource(R.string.nav_icon),
                         tint = if (isSelected) MaterialTheme.colorScheme.primary
                         else MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -38,7 +39,9 @@ internal fun BottomNavigation(
                 label = {
                     Text(
                         text = stringResource(item.iconTextId),
-                        style = MaterialTheme.typography.labelSmall
+                        style = MaterialTheme.typography.bodySmall,
+                        color = if (isSelected) MaterialTheme.colorScheme.primary
+                        else MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
             )

@@ -6,7 +6,3 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 object ReportNavKey : NavKey
-
-fun Navigator.navigateToReport() {
-    navigate(ReportNavKey)
-}

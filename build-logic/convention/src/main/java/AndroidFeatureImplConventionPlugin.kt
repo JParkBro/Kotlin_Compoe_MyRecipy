@@ -1,6 +1,5 @@
 import com.jparkbro.convention.addNavigationDependencies
 import com.jparkbro.convention.addUiLayerDependencies
-import com.jparkbro.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
@@ -13,6 +12,8 @@ class AndroidFeatureImplConventionPlugin : Plugin<Project> {
             apply(plugin = "myrecipy.android.library.compose")
 
             dependencies {
+                "implementation"(project(":core:designsystem"))
+                "implementation"(project(":core:model"))
                 "implementation"(project(":core:ui"))
 
                 addUiLayerDependencies(target)

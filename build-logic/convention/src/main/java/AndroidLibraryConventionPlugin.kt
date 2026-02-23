@@ -27,6 +27,8 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
+                "implementation"(project(":core:model"))
+
                 "implementation"(project.libs.findBundle("koin").get())
                 "testImplementation"(kotlin("test"))
             }

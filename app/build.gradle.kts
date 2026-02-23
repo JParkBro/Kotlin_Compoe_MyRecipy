@@ -27,6 +27,10 @@ dependencies {
     implementation(projects.feature.shell.report.impl)
     implementation(projects.feature.shell.settings.api)
     implementation(projects.feature.shell.settings.impl)
+    implementation(projects.feature.shell.category.manage.api)
+    implementation(projects.feature.shell.category.manage.impl)
+    implementation(projects.feature.shell.category.editor.api)
+    implementation(projects.feature.shell.category.editor.impl)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

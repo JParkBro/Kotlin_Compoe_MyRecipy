@@ -38,6 +38,13 @@
             <option value="$PROJECT_DIR$/feature/shell/calendar" />
             <option value="$PROJECT_DIR$/feature/shell/calendar/api" />
             <option value="$PROJECT_DIR$/feature/shell/calendar/impl" />
+            <option value="$PROJECT_DIR$/feature/shell/category" />
+            <option value="$PROJECT_DIR$/feature/shell/category/editor" />
+            <option value="$PROJECT_DIR$/feature/shell/category/editor/api" />
+            <option value="$PROJECT_DIR$/feature/shell/category/editor/impl" />
+            <option value="$PROJECT_DIR$/feature/shell/category/manage" />
+            <option value="$PROJECT_DIR$/feature/shell/category/manage/api" />
+            <option value="$PROJECT_DIR$/feature/shell/category/manage/impl" />
             <option value="$PROJECT_DIR$/feature/shell/editor" />
             <option value="$PROJECT_DIR$/feature/shell/editor/api" />
             <option value="$PROJECT_DIR$/feature/shell/editor/impl" />

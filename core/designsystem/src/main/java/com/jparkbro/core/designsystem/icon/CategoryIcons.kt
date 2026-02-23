@@ -1,0 +1,52 @@
+package com.jparkbro.core.designsystem.icon
+
+/**
+ * 카테고리 아이콘 선택 시 표시할 아이콘 목록.
+ * 순서가 보장되며, Icons.kt 에 등록된 이름과 매핑됩니다.
+ * 새 아이콘 추가 시 Icons.kt → IconMapper.kt → 이 목록 순서로 추가하세요.
+ */
+val CategoryIcons: List<String> = listOf(
+    "ic_fork_spoon",
+    "ic_restaurant",
+    "ic_lunch_dining",
+    "ic_local_pizza",
+    "ic_local_cafe",
+    "ic_local_bar",
+    "ic_shopping_cart",
+    "ic_storefront",
+    "ic_local_convenience_store",
+    "ic_apparel",
+    "ic_featured_seasonal_and_gifts",
+    "ic_directions_car",
+    "ic_directions_subway",
+    "ic_directions_bike",
+    "ic_local_taxi",
+    "ic_moped",
+    "ic_train",
+    "ic_flight",
+    "ic_travel",
+    "ic_electric_car",
+    "ic_ev_station",
+    "ic_local_gas_station",
+    "ic_local_parking",
+    "ic_local_shipping",
+    "ic_local_hospital",
+    "ic_healing",
+    "ic_dentistry",
+    "ic_pill",
+    "ic_exercise",
+    "ic_fitness_center",
+    "ic_movie",
+    "ic_theaters",
+    "ic_music_note",
+    "ic_sports_esports",
+    "ic_videogame_asset",
+    "ic_pet_supplies",
+    "ic_home",
+    "ic_bolt",
+    "ic_cake",
+    "ic_credit_card",
+    "ic_timer",
+    "ic_alert",
+    "ic_edit",
+)

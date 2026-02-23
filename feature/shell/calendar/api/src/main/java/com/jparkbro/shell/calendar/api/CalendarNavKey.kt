@@ -6,7 +6,3 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 object CalendarNavKey : NavKey
-
-fun Navigator.navigateToCalendar() {
-    navigate(CalendarNavKey)
-}
