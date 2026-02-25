@@ -11,7 +11,7 @@ fun EntryProviderScope<NavKey>.categoryEditorEntry(
 ) {
     entry<CategoryEditorNavKey> {
         CategoryEditorRoot(
-
+            onNavigateBack = navigator::goBack
         )
     }
 }
