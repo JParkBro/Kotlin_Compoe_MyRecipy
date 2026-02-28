@@ -9,6 +9,9 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
 
+    implementation(projects.core.database)
+    implementation(projects.core.model)
+
     //	- Google Login
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.play.services.auth)
