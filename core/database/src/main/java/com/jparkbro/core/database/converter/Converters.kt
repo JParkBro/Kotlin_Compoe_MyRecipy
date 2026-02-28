@@ -1,7 +1,7 @@
 package com.jparkbro.core.database.converter
 
 import androidx.room.TypeConverter
-import com.jparkbro.core.model.TransactionType
+import com.jparkbro.core.model.type.TransactionType
 import java.time.LocalDate
 import java.time.LocalTime
 

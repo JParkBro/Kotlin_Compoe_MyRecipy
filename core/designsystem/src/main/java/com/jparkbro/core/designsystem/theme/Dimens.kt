@@ -43,4 +43,5 @@ object IconSize {
     val S = 24.dp
     val M = 32.dp
     val L = 48.dp
+    val XXL = 72.dp
 }

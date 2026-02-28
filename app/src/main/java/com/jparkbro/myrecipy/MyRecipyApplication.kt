@@ -1,7 +1,9 @@
 package com.jparkbro.myrecipy
 
 import android.app.Application
+import com.jparkbro.category.editor.impl.di.categoryEditorModule
 import com.jparkbro.category.manage.impl.di.categoryManageModule
+import com.jparkbro.core.data.di.dataModule
 import com.jparkbro.core.database.di.databaseModule
 import com.jparkbro.shell.editor.impl.di.editorModule
 import org.koin.android.ext.koin.androidContext
@@ -16,8 +18,10 @@ class MyRecipyApplication: Application() {
 
             modules(
                 databaseModule,
+                dataModule,
                 editorModule,
-                categoryManageModule
+                categoryManageModule,
+                categoryEditorModule
             )
         }
     }

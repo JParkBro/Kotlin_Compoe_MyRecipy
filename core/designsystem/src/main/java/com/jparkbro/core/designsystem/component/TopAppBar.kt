@@ -48,7 +48,7 @@ fun MyRecipyTopAppBar(
             }
         },
         actions = {
-            actions?.let { it() }
+            actions?.invoke()
         },
         colors = colors,
         modifier = modifier.testTag("myRecipyTopAppBar"),

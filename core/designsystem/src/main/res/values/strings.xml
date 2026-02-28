@@ -18,6 +18,16 @@
     <string name="cancel">취소</string>
     <string name="category">카테고리</string>
     <string name="category_manage">관리</string>
+    <string name="category_main">대분류</string>
+    <string name="category_sub">소분류</string>
+    <string name="category_type">카테고리 분류</string>
+    <string name="category_name">카테고리명</string>
+    <string name="category_name_hint">예: 고정지출, 식비</string>
+    <string name="parent_category">상위 카테고리</string>
+    <string name="parent_category_hint">상위 카테고리를 선택하세요</string>
+    <string name="icon_select">아이콘 선택</string>
+    <string name="show_all">전체보기</string>
+    <string name="show_less">접기</string>
 
     <string name="settings_icon">설정 아이콘</string>
     <string name="nav_icon">네비게이션 아이콘</string>
@@ -78,4 +88,15 @@
     <string name="videogame_asset_icon">게임기 아이콘</string>
 
     <string name="hierarchy_info">계층: 대분류 &gt; 소분류</string>
+
+    <string name="save_success">등록이 완료되었습니다</string>
+    <string name="save_failure">등록에 실패했습니다</string>
+
+    <string name="category_empty_title">카테고리가 없습니다</string>
+    <string name="category_empty_description">우측 상단 + 버튼으로 카테고리를 추가해보세요</string>
+    <string name="category_section_empty_action">카테고리 관리에서 추가해보세요</string>
+    <string name="sub_category_empty_title">소분류가 없습니다</string>
+
+    <string name="memo">메모</string>
+    <string name="memo_hint">메모 입력...</string>
 </resources>

@@ -4,7 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import com.jparkbro.core.designsystem.R
 import com.jparkbro.shell.calendar.api.CalendarNavKey
-import com.jparkbro.core.model.EditorType
+import com.jparkbro.core.model.type.EditorType
 import com.jparkbro.shell.editor.api.EditorNavKey
 import com.jparkbro.shell.history.api.HistoryNavKey
 import com.jparkbro.shell.report.api.ReportNavKey
