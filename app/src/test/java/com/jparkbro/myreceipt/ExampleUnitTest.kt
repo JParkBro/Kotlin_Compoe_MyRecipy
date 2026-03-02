@@ -1,4 +1,4 @@
-package com.jparkbro.myrecipy
+package com.jparkbro.myreceipt
 
 import org.junit.Test
 

@@ -2,8 +2,29 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="17">
+      <module name="MyRecipy.app" target="21" />
+      <module name="MyRecipy.core.data" target="21" />
+      <module name="MyRecipy.core.database" target="21" />
+      <module name="MyRecipy.core.designsystem" target="21" />
+      <module name="MyRecipy.core.navigation" target="21" />
+      <module name="MyRecipy.core.network" target="21" />
+      <module name="MyRecipy.core.ui" target="21" />
+      <module name="MyRecipy.feature.shell.calendar.api" target="21" />
+      <module name="MyRecipy.feature.shell.calendar.impl" target="21" />
       <module name="MyRecipy.feature.shell.category.api" target="21" />
+      <module name="MyRecipy.feature.shell.category.editor.api" target="21" />
+      <module name="MyRecipy.feature.shell.category.editor.impl" target="21" />
+      <module name="MyRecipy.feature.shell.category.manage.api" target="21" />
+      <module name="MyRecipy.feature.shell.category.manage.impl" target="21" />
+      <module name="MyRecipy.feature.shell.editor.api" target="21" />
+      <module name="MyRecipy.feature.shell.editor.impl" target="21" />
+      <module name="MyRecipy.feature.shell.history.api" target="21" />
+      <module name="MyRecipy.feature.shell.history.impl" target="21" />
+      <module name="MyRecipy.feature.shell.report.api" target="21" />
+      <module name="MyRecipy.feature.shell.report.impl" target="21" />
       <module name="MyRecipy.feature.shell.setting" target="21" />
+      <module name="MyRecipy.feature.shell.settings.api" target="21" />
+      <module name="MyRecipy.feature.shell.settings.impl" target="21" />
     </bytecodeTargetLevel>
   </component>
 </project>

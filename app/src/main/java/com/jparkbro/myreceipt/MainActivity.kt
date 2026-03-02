@@ -1,4 +1,4 @@
-package com.jparkbro.myrecipy
+package com.jparkbro.myreceipt
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,11 +9,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import com.jparkbro.core.navigation.Navigator
 import com.jparkbro.core.navigation.rememberNavigationState
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
-import com.jparkbro.myrecipy.navigation.AppNavDisplay
-import com.jparkbro.myrecipy.navigation.BottomNavigation
-import com.jparkbro.myrecipy.navigation.TOP_LEVEL_NAV_ITEMS
-import com.jparkbro.myrecipy.navigation.BOTTOM_NAV_ITEMS
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
+import com.jparkbro.myreceipt.navigation.AppNavDisplay
+import com.jparkbro.myreceipt.navigation.BottomNavigation
+import com.jparkbro.myreceipt.navigation.TOP_LEVEL_NAV_ITEMS
 import com.jparkbro.shell.history.api.HistoryNavKey
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +20,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MyRecipyTheme {
+            MyReceiptTheme {
                 val navigationState = rememberNavigationState(
                     startKey = HistoryNavKey,
                     topLevelKeys = TOP_LEVEL_NAV_ITEMS.keys,

@@ -1,4 +1,4 @@
-package com.jparkbro.myrecipy
+package com.jparkbro.myreceipt
 
 import android.app.Application
 import com.jparkbro.category.editor.impl.di.categoryEditorModule
@@ -10,12 +10,12 @@ import com.jparkbro.shell.history.impl.di.historyModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
-class MyRecipyApplication: Application() {
+class MyReceiptApplication: Application() {
     override fun onCreate() {
         super.onCreate()
 
         startKoin {
-            androidContext(this@MyRecipyApplication)
+            androidContext(this@MyReceiptApplication)
 
             modules(
                 databaseModule,
