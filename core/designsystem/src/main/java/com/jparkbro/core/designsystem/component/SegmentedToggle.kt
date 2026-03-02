@@ -64,7 +64,7 @@ private fun SegmentedToggleItem(
             )
             .clip(shape = RoundedCornerShape(Shape.S))
             .clickable { onClick() }
-            .padding(vertical = Padding.XS)
+            .padding(vertical = Padding.XXS)
     )
 }
 

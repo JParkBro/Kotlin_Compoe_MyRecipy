@@ -6,6 +6,7 @@ import com.jparkbro.category.manage.impl.di.categoryManageModule
 import com.jparkbro.core.data.di.dataModule
 import com.jparkbro.core.database.di.databaseModule
 import com.jparkbro.shell.editor.impl.di.editorModule
+import com.jparkbro.shell.history.impl.di.historyModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -20,6 +21,7 @@ class MyRecipyApplication: Application() {
                 databaseModule,
                 dataModule,
                 editorModule,
+                historyModule,
                 categoryManageModule,
                 categoryEditorModule
             )

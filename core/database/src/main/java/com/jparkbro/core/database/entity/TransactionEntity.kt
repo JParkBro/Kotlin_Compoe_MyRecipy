@@ -11,33 +11,19 @@ import androidx.room.PrimaryKey
         ForeignKey(
             entity = CategoryEntity::class,
             parentColumns = ["id"],
-            childColumns = ["majorCategoryId"],
+            childColumns = ["mainCategoryId"],
             onDelete = ForeignKey.SET_NULL,
         ),
         ForeignKey(
             entity = CategoryEntity::class,
             parentColumns = ["id"],
-            childColumns = ["middleCategoryId"],
-            onDelete = ForeignKey.SET_NULL,
-        ),
-        ForeignKey(
-            entity = CategoryEntity::class,
-            parentColumns = ["id"],
-            childColumns = ["minorCategoryId"],
-            onDelete = ForeignKey.SET_NULL,
-        ),
-        ForeignKey(
-            entity = PaymentMethodEntity::class,
-            parentColumns = ["id"],
-            childColumns = ["paymentMethodId"],
+            childColumns = ["subCategoryId"],
             onDelete = ForeignKey.SET_NULL,
         ),
     ],
     indices = [
-        Index("majorCategoryId"),
-        Index("middleCategoryId"),
-        Index("minorCategoryId"),
-        Index("paymentMethodId"),
+        Index("mainCategoryId"),
+        Index("subCategoryId"),
     ],
 )
 data class TransactionEntity(
@@ -46,9 +32,7 @@ data class TransactionEntity(
     val time: String,
     val transactionType: String,
     val amount: Long,
-    val memo: String,
-    val majorCategoryId: Long?,
-    val middleCategoryId: Long?,
-    val minorCategoryId: Long?,
-    val paymentMethodId: Long?,
+    val memo: String?,
+    val mainCategoryId: Long?,
+    val subCategoryId: Long?,
 )
