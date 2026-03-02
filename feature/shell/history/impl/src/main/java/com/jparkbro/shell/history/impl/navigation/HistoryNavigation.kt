@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavKey
 import com.jparkbro.core.navigation.Navigator
+import com.jparkbro.shell.editor.api.navigateToEditor
 import com.jparkbro.shell.history.api.HistoryNavKey
 import com.jparkbro.shell.history.impl.HistoryRoot
 
@@ -13,7 +14,8 @@ fun EntryProviderScope<NavKey>.historyEntry(
 ) {
     entry<HistoryNavKey> {
         HistoryRoot(
-            bottomNavigation = bottomNavigation
+            bottomNavigation = bottomNavigation,
+            onNavigateToEditor = navigator::navigateToEditor,
         )
     }
 }

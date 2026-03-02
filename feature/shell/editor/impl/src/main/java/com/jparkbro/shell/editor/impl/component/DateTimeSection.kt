@@ -24,7 +24,7 @@ import androidx.compose.material3.rememberTimePickerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -78,7 +78,7 @@ private fun DateDisplay(
     date: LocalDate,
     onDateSelected: (LocalDate) -> Unit,
 ) {
-    var showDatePicker by remember { mutableStateOf(false) }
+    var showDatePicker by rememberSaveable { mutableStateOf(false) }
     val datePickerState = rememberDatePickerState(
         initialSelectedDateMillis = date.atStartOfDay(ZoneId.of("UTC")).toInstant().toEpochMilli()
     )
@@ -158,7 +158,7 @@ private fun TimeDisplay(
     time: LocalTime,
     onTimeSelected: (LocalTime) -> Unit,
 ) {
-    var showTimePicker by remember { mutableStateOf(false) }
+    var showTimePicker by rememberSaveable { mutableStateOf(false) }
     val timePickerState = rememberTimePickerState(
         initialHour = time.hour,
         initialMinute = time.minute,

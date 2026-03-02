@@ -18,6 +18,7 @@ data class HistoryState(
 
     val categories: List<CategoryGroupUiModel> = emptyList(),
     val transactionGroups: List<DayTransactionGroup> = emptyList(),
+    val deletingTransactionId: Long? = null,
 )
 
 data class DayTransactionGroup(

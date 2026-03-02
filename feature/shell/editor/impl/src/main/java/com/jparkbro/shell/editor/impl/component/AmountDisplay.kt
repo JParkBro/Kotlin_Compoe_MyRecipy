@@ -18,7 +18,7 @@ import androidx.compose.foundation.text.input.insert
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.SolidColor
@@ -62,9 +62,9 @@ private fun AmountInputTextField(
     amountState: TextFieldState,
     onDone: () -> Unit
 ) {
-    val interactionSource = remember { MutableInteractionSource() }
+    val interactionSource = rememberSaveable { MutableInteractionSource() }
 
-    val numberInputTransformation = remember {
+    val numberInputTransformation = rememberSaveable {
         InputTransformation {
             if (!asCharSequence().all { it.isDigit() } || length > 12) {
                 revertAllChanges()
@@ -72,7 +72,7 @@ private fun AmountInputTextField(
         }
     }
 
-    val thousandsOutputTransformation = remember {
+    val thousandsOutputTransformation = rememberSaveable {
         OutputTransformation {
             val originalLength = length
 

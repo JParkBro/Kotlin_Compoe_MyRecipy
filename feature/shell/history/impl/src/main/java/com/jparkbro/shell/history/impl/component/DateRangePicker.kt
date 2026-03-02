@@ -22,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -32,7 +33,7 @@ import com.jparkbro.core.designsystem.R
 import com.jparkbro.core.designsystem.icon.CalendarTodayIcon
 import com.jparkbro.core.designsystem.theme.Border
 import com.jparkbro.core.designsystem.theme.IconSize
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Shape
 import com.jparkbro.core.designsystem.theme.Spacing
@@ -89,7 +90,7 @@ private fun DateChip(
     minDate: LocalDate? = null,
     maxDate: LocalDate? = null,
 ) {
-    var showDatePicker by remember { mutableStateOf(false) }
+    var showDatePicker by rememberSaveable { mutableStateOf(false) }
 
     val selectableDates = remember(minDate, maxDate) {
         object : SelectableDates {
@@ -110,15 +111,15 @@ private fun DateChip(
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(Shape.M))
+            .clip(RoundedCornerShape(Shape.S))
             .clickable { showDatePicker = true }
             .border(
                 width = Border.XS,
                 color = MaterialTheme.colorScheme.primary.copy(alpha = if (isSelected) 0.4f else 0.2f),
-                shape = RoundedCornerShape(Shape.M),
+                shape = RoundedCornerShape(Shape.S),
             )
             .background(MaterialTheme.colorScheme.onPrimary, shape = RoundedCornerShape(Shape.S))
-            .padding(horizontal = Padding.XXXS, vertical = Padding.XS),
+            .padding(horizontal = Padding.XXXS, vertical = Padding.XXS),
         horizontalArrangement = Arrangement.spacedBy(Spacing.XXS, Alignment.CenterHorizontally),
         verticalAlignment = Alignment.CenterVertically,
     ) {
@@ -171,7 +172,7 @@ private fun DateChip(
 @Preview(showBackground = true)
 @Composable
 private fun DateRangePickerPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         DateRangePicker(
             startDate = null,
             endDate = null,

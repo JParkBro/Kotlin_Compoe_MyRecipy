@@ -12,7 +12,7 @@ val databaseModule = module {
         Room.databaseBuilder(
                 androidContext(),
                 AppDatabase::class.java,
-                "myrecipy.db",
+                "myreceipt.db",
             ).fallbackToDestructiveMigration(true)
             .addCallback(DatabaseCallback())
             .build()
