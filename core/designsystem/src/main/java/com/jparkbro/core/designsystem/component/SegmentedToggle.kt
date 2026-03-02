@@ -14,7 +14,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Shape
 
@@ -71,7 +71,7 @@ private fun SegmentedToggleItem(
 @Preview(showBackground = true)
 @Composable
 private fun SegmentedTogglePreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         SegmentedToggle(
             items = listOf("대분류", "소분류"),
             selectedIndex = 0,

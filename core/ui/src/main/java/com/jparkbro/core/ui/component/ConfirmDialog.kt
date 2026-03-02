@@ -7,11 +7,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.jparkbro.core.designsystem.component.BaseDialog
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Spacing
 
 @Composable
-fun MyRecipyConfirmDialog(
+fun MyReceiptConfirmDialog(
     title: String,
     message: String,
     confirmText: String,
@@ -43,8 +43,8 @@ fun MyRecipyConfirmDialog(
 @Preview(showBackground = true)
 @Composable
 private fun ConfirmDialogPreview() {
-    MyRecipyTheme {
-        MyRecipyConfirmDialog(
+    MyReceiptTheme {
+        MyReceiptConfirmDialog(
             title = "카테고리 삭제",
             message = "해당 카테고리를 삭제하시겠습니까?",
             confirmText = "삭제",
