@@ -20,6 +20,9 @@ interface TransactionDao {
     @Delete
     suspend fun delete(transaction: TransactionEntity)
 
+    @Query("DELETE FROM transactions WHERE id = :id")
+    suspend fun deleteById(id: Long)
+
     // 수정에서 사용, 상세 조회
     @Query("SELECT * FROM transactions WHERE id = :id")
     suspend fun getById(id: Long): TransactionEntity?
@@ -34,7 +37,7 @@ interface TransactionDao {
         WHERE (:startDate IS NULL OR date >= :startDate)
         AND (:endDate IS NULL OR date <= :endDate)
         AND (:transactionType IS NULL OR transactionType = :transactionType)
-        AND (:categoryId IS NULL OR majorCategoryId = :categoryId OR middleCategoryId = :categoryId OR minorCategoryId = :categoryId)
+        AND (:categoryId IS NULL OR mainCategoryId = :categoryId OR subCategoryId = :categoryId)
         ORDER BY date DESC, time DESC
     """)
     fun search(

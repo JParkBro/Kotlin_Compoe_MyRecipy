@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.shell.history.impl.DayTransactionGroup
 import java.time.LocalDate
@@ -49,7 +49,7 @@ internal fun DayHeader(
 @Preview(showBackground = true)
 @Composable
 private fun DayHeaderPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         DayHeader(
             group = DayTransactionGroup(
                 date = "2025-01-15",
