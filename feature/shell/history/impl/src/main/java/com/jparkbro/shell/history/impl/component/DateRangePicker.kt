@@ -14,6 +14,7 @@ import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.SelectableDates
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberDatePickerState
@@ -40,10 +41,13 @@ import java.time.LocalDate
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
+private fun LocalDate.toUtcMillis(): Long =
+    atStartOfDay(ZoneId.of("UTC")).toInstant().toEpochMilli()
+
 @Composable
 internal fun DateRangePicker(
-    startDate: LocalDate,
-    endDate: LocalDate,
+    startDate: LocalDate?,
+    endDate: LocalDate?,
     onStartDateSelected: (LocalDate) -> Unit,
     onEndDateSelected: (LocalDate) -> Unit,
     modifier: Modifier = Modifier,
@@ -55,6 +59,8 @@ internal fun DateRangePicker(
     ) {
         DateChip(
             date = startDate,
+            placeholder = stringResource(R.string.start_date),
+            maxDate = endDate,
             onDateSelected = onStartDateSelected,
             modifier = Modifier.weight(1f),
         )
@@ -65,6 +71,8 @@ internal fun DateRangePicker(
         )
         DateChip(
             date = endDate,
+            placeholder = stringResource(R.string.end_date),
+            minDate = startDate,
             onDateSelected = onEndDateSelected,
             modifier = Modifier.weight(1f),
         )
@@ -74,15 +82,31 @@ internal fun DateRangePicker(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DateChip(
-    date: LocalDate,
-    onDateSelected: (LocalDate) -> Unit,
+    date: LocalDate?,
+    placeholder: String,
     modifier: Modifier = Modifier,
+    onDateSelected: (LocalDate) -> Unit,
+    minDate: LocalDate? = null,
+    maxDate: LocalDate? = null,
 ) {
     var showDatePicker by remember { mutableStateOf(false) }
+
+    val selectableDates = remember(minDate, maxDate) {
+        object : SelectableDates {
+            override fun isSelectableDate(utcTimeMillis: Long): Boolean {
+                val afterMin = minDate?.let { utcTimeMillis >= it.toUtcMillis() } ?: true
+                val beforeMax = maxDate?.let { utcTimeMillis <= it.toUtcMillis() } ?: true
+                return afterMin && beforeMax
+            }
+        }
+    }
+
     val datePickerState = rememberDatePickerState(
-        initialSelectedDateMillis = date.atStartOfDay(ZoneId.of("UTC")).toInstant().toEpochMilli()
+        initialSelectedDateMillis = (date ?: LocalDate.now()).toUtcMillis(),
+        selectableDates = selectableDates,
     )
 
+    val isSelected = date != null
     Row(
         modifier = modifier
             .fillMaxWidth()
@@ -90,24 +114,28 @@ private fun DateChip(
             .clickable { showDatePicker = true }
             .border(
                 width = Border.XS,
-                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.2f),
+                color = MaterialTheme.colorScheme.primary.copy(alpha = if (isSelected) 0.4f else 0.2f),
                 shape = RoundedCornerShape(Shape.M),
             )
             .background(MaterialTheme.colorScheme.onPrimary, shape = RoundedCornerShape(Shape.S))
-            .padding(horizontal = Padding.XXS, vertical = Padding.XS),
-        horizontalArrangement = Arrangement.spacedBy(Spacing.XXS),
+            .padding(horizontal = Padding.XXXS, vertical = Padding.XS),
+        horizontalArrangement = Arrangement.spacedBy(Spacing.XXS, Alignment.CenterHorizontally),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Icon(
             imageVector = CalendarTodayIcon,
             contentDescription = stringResource(R.string.calendar_today_icon),
-            tint = MaterialTheme.colorScheme.primary,
+            tint = MaterialTheme.colorScheme.primary.copy(alpha = if (isSelected) 1f else 0.4f),
             modifier = Modifier.size(IconSize.XS),
         )
         Text(
-            text = date.format(DateTimeFormatter.ofPattern("yyyy.MM.dd")),
+            text = date?.format(DateTimeFormatter.ofPattern("yyyy.MM.dd")) ?: placeholder,
             style = MaterialTheme.typography.bodyLarge,
-            color = MaterialTheme.colorScheme.onSurface,
+            color = if (isSelected) {
+                MaterialTheme.colorScheme.onSurface
+            } else {
+                MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f)
+            },
         )
     }
 
@@ -145,8 +173,8 @@ private fun DateChip(
 private fun DateRangePickerPreview() {
     MyRecipyTheme {
         DateRangePicker(
-            startDate = LocalDate.now().withDayOfMonth(1),
-            endDate = LocalDate.now(),
+            startDate = null,
+            endDate = null,
             onStartDateSelected = {},
             onEndDateSelected = {},
         )
