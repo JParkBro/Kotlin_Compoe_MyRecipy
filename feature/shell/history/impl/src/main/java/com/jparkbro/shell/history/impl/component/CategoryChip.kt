@@ -18,7 +18,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.jparkbro.core.designsystem.R
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Shape
 import com.jparkbro.core.designsystem.theme.Spacing
@@ -97,7 +97,7 @@ private fun CategoryChip(
 @Preview(showBackground = true)
 @Composable
 private fun CategoryChipRowPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         CategoryChipRow(
             title = "대분류",
             allLabel = stringResource(R.string.all),

@@ -7,7 +7,7 @@ class AndroidFeatureApiConventionPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         with(target) {
-            apply(plugin = "myrecipy.android.library")
+            apply(plugin = "myreceipt.android.library")
             apply(plugin = "org.jetbrains.kotlin.plugin.serialization")
 
             dependencies {

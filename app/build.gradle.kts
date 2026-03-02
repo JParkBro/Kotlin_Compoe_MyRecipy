@@ -1,9 +1,9 @@
 plugins {
-    alias(libs.plugins.myrecipy.android.application.compose)
+    alias(libs.plugins.myreceipt.android.application.compose)
 }
 
 android {
-    namespace = "com.jparkbro.myrecipy"
+    namespace = "com.jparkbro.myreceipt"
 
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

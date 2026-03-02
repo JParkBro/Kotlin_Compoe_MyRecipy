@@ -1,6 +1,6 @@
 plugins {
-    alias(libs.plugins.myrecipy.android.library)
-    alias(libs.plugins.myrecipy.android.room)
+    alias(libs.plugins.myreceipt.android.library)
+    alias(libs.plugins.myreceipt.android.room)
 }
 
 android {

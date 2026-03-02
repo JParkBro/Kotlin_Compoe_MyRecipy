@@ -12,7 +12,7 @@ class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         with(target) {
-            apply(plugin = "myrecipy.android.application")
+            apply(plugin = "myreceipt.android.application")
             apply(plugin = "org.jetbrains.kotlin.plugin.compose")
 
             val extension = extensions.getByType<ApplicationExtension>()

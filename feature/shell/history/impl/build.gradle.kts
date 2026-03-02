@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.myrecipy.android.feature.impl)
+    alias(libs.plugins.myreceipt.android.feature.impl)
 }
 
 android {
@@ -8,4 +8,5 @@ android {
 
 dependencies {
     implementation(projects.feature.shell.history.api)
+    implementation(projects.feature.shell.editor.api)
 }

@@ -15,13 +15,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.jparkbro.core.designsystem.component.BaseDialog
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Shape
 import com.jparkbro.core.designsystem.theme.Spacing
 
 @Composable
-fun MyRecipyAlertDialog(
+fun MyReceiptAlertDialog(
     title: String,
     message: String,
     confirmText: String,
@@ -98,8 +98,8 @@ internal fun DialogCancelButton(
 @Preview(showBackground = true)
 @Composable
 private fun AlertDialogPreview() {
-    MyRecipyTheme {
-        MyRecipyAlertDialog(
+    MyReceiptTheme {
+        MyReceiptAlertDialog(
             title = "알림",
             message = "요청이 처리되었습니다.",
             confirmText = "확인",

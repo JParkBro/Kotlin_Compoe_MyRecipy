@@ -28,7 +28,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import com.jparkbro.core.designsystem.R
 import com.jparkbro.core.designsystem.icon.WonSymbolUnicode
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Spacing
 
@@ -135,7 +135,7 @@ private fun AmountInputTextField(
 @Preview(showBackground = true)
 @Composable
 private fun AmountDisplayPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         AmountDisplay(
             amountState = TextFieldState(),
             onDone = {}

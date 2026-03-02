@@ -1,4 +1,4 @@
 plugins {
     id("java-library")
-    alias(libs.plugins.myrecipy.jvm.library)
+    alias(libs.plugins.myreceipt.jvm.library)
 }

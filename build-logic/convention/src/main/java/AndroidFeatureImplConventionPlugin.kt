@@ -9,7 +9,7 @@ class AndroidFeatureImplConventionPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         with(target) {
-            apply(plugin = "myrecipy.android.library.compose")
+            apply(plugin = "myreceipt.android.library.compose")
 
             dependencies {
                 "implementation"(project(":core:designsystem"))

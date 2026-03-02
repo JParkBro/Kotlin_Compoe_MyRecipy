@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.myrecipy.android.feature.impl)
+    alias(libs.plugins.myreceipt.android.feature.impl)
 }
 
 android {

@@ -1,4 +1,4 @@
-package com.jparkbro.myrecipy.navigation
+package com.jparkbro.myreceipt.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

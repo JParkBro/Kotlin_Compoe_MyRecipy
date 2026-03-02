@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.jparkbro.core.designsystem.R
-import com.jparkbro.core.designsystem.component.MyRecipyTopAppBar
+import com.jparkbro.core.designsystem.component.MyReceiptTopAppBar
 import com.jparkbro.core.designsystem.icon.ArrowBackIcon
 
 @Composable
@@ -18,7 +18,7 @@ fun BackStackTopAppBar(
     colors: TopAppBarColors = TopAppBarDefaults.topAppBarColors(),
     onNavigationClick: () -> Unit = {},
 ) {
-    MyRecipyTopAppBar(
+    MyReceiptTopAppBar(
         modifier = modifier,
         titleRes = titleRes,
         navigationIcon = ArrowBackIcon,

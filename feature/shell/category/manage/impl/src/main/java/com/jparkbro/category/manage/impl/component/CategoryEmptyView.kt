@@ -18,7 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.jparkbro.core.designsystem.R
 import com.jparkbro.core.designsystem.icon.AddNotesOutlineIcon
 import com.jparkbro.core.designsystem.theme.IconSize
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Spacing
 
 @Composable
@@ -55,7 +55,7 @@ internal fun CategoryEmptyView(
 @Preview(showBackground = true)
 @Composable
 private fun CategoryEmptyViewPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         CategoryEmptyView()
     }
 }
