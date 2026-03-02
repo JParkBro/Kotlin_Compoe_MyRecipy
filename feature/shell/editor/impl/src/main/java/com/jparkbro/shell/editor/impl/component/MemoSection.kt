@@ -20,7 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.jparkbro.core.designsystem.R
 import com.jparkbro.core.designsystem.theme.Border
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Shape
 import com.jparkbro.core.ui.component.EditorFormSection
@@ -77,7 +77,7 @@ internal fun MemoSection(
 @Preview(showBackground = true)
 @Composable
 private fun MemoSectionPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         MemoSection(memoState = TextFieldState())
     }
 }

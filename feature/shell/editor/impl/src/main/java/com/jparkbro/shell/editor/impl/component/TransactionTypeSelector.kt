@@ -6,7 +6,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.jparkbro.core.designsystem.R
 import com.jparkbro.core.designsystem.component.SegmentedToggle
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.model.type.TransactionType
 
 @Composable
@@ -28,7 +28,7 @@ internal fun TransactionTypeSelector(
 @Preview(showBackground = true)
 @Composable
 private fun TransactionTypeSelectorPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         TransactionTypeSelector()
     }
 }

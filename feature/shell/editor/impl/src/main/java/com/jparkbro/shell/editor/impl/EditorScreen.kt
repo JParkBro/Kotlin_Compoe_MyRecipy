@@ -5,7 +5,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -16,22 +15,21 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.jparkbro.core.ui.util.ObserveAsEvents
 import com.jparkbro.core.designsystem.R
 import com.jparkbro.core.designsystem.theme.Border
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Shape
 import com.jparkbro.core.designsystem.theme.Spacing
 import com.jparkbro.core.model.type.EditorType
 import com.jparkbro.core.ui.component.BackStackTopAppBar
+import com.jparkbro.core.ui.util.ObserveAsEvents
 import com.jparkbro.shell.editor.impl.component.AmountDisplay
 import com.jparkbro.shell.editor.impl.component.CategorySection
 import com.jparkbro.shell.editor.impl.component.DateTimeSection
@@ -173,7 +171,7 @@ private fun EditorScreen(
 @Preview(showBackground = true)
 @Composable
 private fun EditorScreenPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         EditorScreen(
             state = EditorState(),
             onAction = {}

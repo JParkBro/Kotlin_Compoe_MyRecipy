@@ -36,7 +36,7 @@ import com.jparkbro.core.designsystem.icon.CalendarTodayIcon
 import com.jparkbro.core.designsystem.icon.TimerIcon
 import com.jparkbro.core.designsystem.theme.Border
 import com.jparkbro.core.designsystem.theme.IconSize
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Shape
 import com.jparkbro.core.designsystem.theme.Spacing
@@ -231,7 +231,7 @@ private fun TimeDisplay(
 @Preview(showBackground = true)
 @Composable
 private fun DateTimeSectionPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         DateTimeSection()
     }
 }

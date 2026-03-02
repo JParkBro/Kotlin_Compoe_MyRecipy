@@ -17,6 +17,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.LocalTime
+import java.time.format.DateTimeFormatter
 
 class EditorViewModel(
     private val editorType: EditorType,
@@ -102,13 +103,14 @@ class EditorViewModel(
     private fun saveTransaction() {
         val current = _state.value
         val amount = current.amount.text.toString().toLongOrNull() ?: return
+        val timeStr = current.time.format(DateTimeFormatter.ofPattern("HH:mm"))
 
         viewModelScope.launch(Dispatchers.IO) {
             runCatching {
                 when (editorType) {
                     EditorType.INSERT -> transactionRepository.insertTransaction(
                         date = current.date.toString(),
-                        time = current.time.toString(),
+                        time = timeStr,
                         transactionType = current.transactionType.name,
                         amount = amount,
                         memo = current.memo.text.toString().ifBlank { null },
@@ -119,7 +121,7 @@ class EditorViewModel(
                         transactionRepository.updateTransaction(
                             id = it,
                             date = current.date.toString(),
-                            time = current.time.toString(),
+                            time = timeStr,
                             transactionType = current.transactionType.name,
                             amount = amount,
                             memo = current.memo.text.toString().ifBlank { null },
