@@ -18,24 +18,26 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.jparkbro.core.ui.util.ObserveAsEvents
 import com.jparkbro.core.designsystem.R
 import com.jparkbro.core.designsystem.theme.Border
 import com.jparkbro.core.designsystem.theme.MyRecipyTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Shape
 import com.jparkbro.core.designsystem.theme.Spacing
-import com.jparkbro.core.model.EditorType
+import com.jparkbro.core.model.type.EditorType
 import com.jparkbro.core.ui.component.BackStackTopAppBar
 import com.jparkbro.shell.editor.impl.component.AmountDisplay
 import com.jparkbro.shell.editor.impl.component.CategorySection
 import com.jparkbro.shell.editor.impl.component.DateTimeSection
-import com.jparkbro.shell.editor.impl.component.TransactionTypeToggle
+import com.jparkbro.shell.editor.impl.component.MemoSection
+import com.jparkbro.shell.editor.impl.component.TransactionTypeSelector
 import org.koin.compose.viewmodel.koinViewModel
-
 
 @Composable
 internal fun EditorRoot(
@@ -44,6 +46,21 @@ internal fun EditorRoot(
     viewModel: EditorViewModel = koinViewModel()
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val context = LocalContext.current
+
+    val saveSuccessMessage = stringResource(R.string.save_success)
+    val saveFailureMessage = stringResource(R.string.save_failure)
+    ObserveAsEvents(viewModel.event) { event ->
+        when (event) {
+            EditorEvent.SaveSuccess -> {
+                android.widget.Toast.makeText(context, saveSuccessMessage, android.widget.Toast.LENGTH_SHORT).show()
+                onNavigateBack()
+            }
+            EditorEvent.SaveFailure -> {
+                android.widget.Toast.makeText(context, saveFailureMessage, android.widget.Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 
     EditorScreen(
         state = state,
@@ -77,12 +94,14 @@ private fun EditorScreen(
                         Text(
                             text = stringResource(R.string.save),
                             style = MaterialTheme.typography.labelLarge,
-                            color = MaterialTheme.colorScheme.primary,
+                            color = if (state.isSaveEnabled) MaterialTheme.colorScheme.primary
+                                    else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.3f),
                             modifier = Modifier
                                 .padding(end = Padding.XXS)
-                                .clickable { }
+                                .clickable(enabled = state.isSaveEnabled) { onAction(EditorAction.OnSaveClick) }
                                 .background(
-                                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.15f),
+                                    color = if (state.isSaveEnabled) MaterialTheme.colorScheme.primary.copy(alpha = 0.15f)
+                                            else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.08f),
                                     shape = RoundedCornerShape(Shape.M)
                                 )
                                 .padding(horizontal = Padding.XS, vertical = Padding.XXS)
@@ -116,14 +135,14 @@ private fun EditorScreen(
                     .padding(horizontal = Padding.XS),
                 verticalArrangement = Arrangement.spacedBy(Spacing.S)
             ) {
-                TransactionTypeToggle(
+                TransactionTypeSelector(
                     modifier = Modifier,
                     type = state.transactionType,
                     onTypeClicked = { onAction(EditorAction.OnTypeClicked(it)) }
                 )
                 AmountDisplay(
                     modifier = Modifier,
-                    amount = state.amount,
+                    amountState = state.amount,
                     onDone = { focusManager.clearFocus() }
                 )
                 DateTimeSection(
@@ -135,7 +154,16 @@ private fun EditorScreen(
                 )
                 CategorySection(
                     modifier = Modifier,
+                    categories = state.categories,
+                    selectedMainCategoryId = state.selectedMainCategoryId,
+                    selectedSubCategoryId = state.selectedSubCategoryId,
+                    onMainCategorySelected = { onAction(EditorAction.OnMainCategorySelected(it)) },
+                    onSubCategorySelected = { onAction(EditorAction.OnSubCategorySelected(it)) },
                     onManageClick = { onAction(EditorAction.OnCategoryManageClick) },
+                )
+                MemoSection(
+                    modifier = Modifier,
+                    memoState = state.memo
                 )
             }
         }

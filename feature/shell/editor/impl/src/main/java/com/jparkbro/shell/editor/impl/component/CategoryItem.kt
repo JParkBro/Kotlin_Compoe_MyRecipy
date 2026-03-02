@@ -1,6 +1,5 @@
 package com.jparkbro.shell.editor.impl.component
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -21,17 +20,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import com.jparkbro.core.designsystem.R
+import com.jparkbro.core.designsystem.icon.RestaurantIcon
 import com.jparkbro.core.designsystem.theme.IconSize
 import com.jparkbro.core.designsystem.theme.MyRecipyTheme
 import com.jparkbro.core.designsystem.theme.Spacing
 
 @Composable
 internal fun CategoryItem(
-    @DrawableRes iconRes: Int,
+    icon: ImageVector,
     title: String,
     isSelected: Boolean,
     onClick: () -> Unit,
@@ -48,13 +46,13 @@ internal fun CategoryItem(
                 .clip(CircleShape)
                 .background(
                     color = if (isSelected) MaterialTheme.colorScheme.primary
-                            else MaterialTheme.colorScheme.surfaceVariant
+                            else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
                 )
                 .clickable { onClick() },
             contentAlignment = Alignment.Center,
         ) {
             Icon(
-                imageVector = ImageVector.vectorResource(iconRes),
+                imageVector = icon,
                 contentDescription = null,
                 tint = if (isSelected) MaterialTheme.colorScheme.onPrimary
                        else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f),
@@ -77,15 +75,15 @@ internal fun CategoryItem(
 private fun CategoryItemPreview() {
     var isSelected by remember { mutableStateOf(false) }
     MyRecipyTheme {
-        Row() {
+        Row {
             CategoryItem(
-                iconRes = R.drawable.ic_calendar_today,
+                icon = RestaurantIcon,
                 title = "식비",
                 isSelected = !isSelected,
                 onClick = { isSelected = !isSelected },
             )
             CategoryItem(
-                iconRes = R.drawable.ic_calendar_today,
+                icon = RestaurantIcon,
                 title = "식비",
                 isSelected = isSelected,
                 onClick = { isSelected = !isSelected },

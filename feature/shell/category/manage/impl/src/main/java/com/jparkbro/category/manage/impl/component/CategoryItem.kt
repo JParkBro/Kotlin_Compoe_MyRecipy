@@ -44,6 +44,7 @@ internal fun CategoryItem(
     title: String,
     isMajor: Boolean,
     isExpanded: Boolean = false,
+    isExpandable: Boolean = true,
     onEdit: () -> Unit,
     onDelete: () -> Unit,
     onToggle: () -> Unit = {},
@@ -113,9 +114,10 @@ internal fun CategoryItem(
                     imageVector = if (isExpanded) KeyboardArrowUpIcon else KeyboardArrowDownIcon,
                     contentDescription = if (isExpanded) stringResource(R.string.keyboard_arrow_up_icon)
                                          else stringResource(R.string.keyboard_arrow_down_icon),
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f),
-                    modifier = Modifier
-                        .clickable { onToggle() }
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant.copy(
+                        alpha = if (isExpandable) 0.5f else 0.15f
+                    ),
+                    modifier = Modifier.clickable(enabled = isExpandable) { onToggle() }
                 )
             }
         }

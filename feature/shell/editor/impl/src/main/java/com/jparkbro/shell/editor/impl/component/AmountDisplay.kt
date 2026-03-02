@@ -35,7 +35,7 @@ import com.jparkbro.core.designsystem.theme.Spacing
 @Composable
 internal fun AmountDisplay(
     modifier: Modifier = Modifier,
-    amount: TextFieldState,
+    amountState: TextFieldState,
     onDone: () -> Unit,
 ) {
     Column(
@@ -50,7 +50,7 @@ internal fun AmountDisplay(
             color = MaterialTheme.colorScheme.primary.copy(alpha = 0.6f)
         )
         AmountInputTextField(
-            amount = amount,
+            amountState = amountState,
             onDone = onDone
         )
     }
@@ -59,7 +59,7 @@ internal fun AmountDisplay(
 @Composable
 private fun AmountInputTextField(
     modifier: Modifier = Modifier,
-    amount: TextFieldState,
+    amountState: TextFieldState,
     onDone: () -> Unit
 ) {
     val interactionSource = remember { MutableInteractionSource() }
@@ -81,7 +81,7 @@ private fun AmountInputTextField(
             }
         }
     }
-    val isEmptied = amount.text.isEmpty()
+    val isEmptied = amountState.text.isEmpty()
 
     Box(
         modifier = modifier
@@ -95,7 +95,7 @@ private fun AmountInputTextField(
                 .align(Alignment.CenterStart)
         )
         BasicTextField(
-            state = amount,
+            state = amountState,
             modifier = Modifier
                 .width(IntrinsicSize.Min)
                 .padding(horizontal = Padding.M)
@@ -137,7 +137,7 @@ private fun AmountInputTextField(
 private fun AmountDisplayPreview() {
     MyRecipyTheme {
         AmountDisplay(
-            amount = TextFieldState(),
+            amountState = TextFieldState(),
             onDone = {}
         )
     }
