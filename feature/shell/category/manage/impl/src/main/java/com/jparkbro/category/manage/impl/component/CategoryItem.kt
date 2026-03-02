@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -31,7 +30,6 @@ import com.jparkbro.core.designsystem.icon.KeyboardArrowDownIcon
 import com.jparkbro.core.designsystem.icon.KeyboardArrowUpIcon
 import com.jparkbro.core.designsystem.icon.RestaurantIcon
 import com.jparkbro.core.designsystem.theme.Border
-import com.jparkbro.core.designsystem.theme.IconSize
 import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Shape

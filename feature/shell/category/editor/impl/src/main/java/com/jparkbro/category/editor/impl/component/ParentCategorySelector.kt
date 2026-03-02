@@ -33,7 +33,7 @@ import com.jparkbro.core.designsystem.icon.KeyboardArrowDownIcon
 import com.jparkbro.core.designsystem.icon.KeyboardArrowUpIcon
 import com.jparkbro.core.designsystem.theme.Border
 import com.jparkbro.core.designsystem.theme.IconSize
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Shape
 import com.jparkbro.core.model.ui.CategoryUiModel
@@ -138,7 +138,7 @@ internal fun ParentCategorySelector(
 @Preview(showBackground = true)
 @Composable
 private fun ParentCategorySelectorPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         ParentCategorySelector(
             parentCategories = listOf(
                 CategoryUiModel(id = 1L, parentId = null, title = "고정지출", iconName = ""),

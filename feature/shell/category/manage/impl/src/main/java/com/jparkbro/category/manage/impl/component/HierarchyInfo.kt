@@ -18,7 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.jparkbro.core.designsystem.R
 import com.jparkbro.core.designsystem.icon.AlertIcon
 import com.jparkbro.core.designsystem.theme.Border
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Spacing
 
@@ -58,7 +58,7 @@ internal fun HierarchyInfo(
 @Preview(showBackground = true)
 @Composable
 private fun HierarchyInfoPreview() {
-    MyRecipyTheme() {
+    MyReceiptTheme() {
         HierarchyInfo()
     }
 }
