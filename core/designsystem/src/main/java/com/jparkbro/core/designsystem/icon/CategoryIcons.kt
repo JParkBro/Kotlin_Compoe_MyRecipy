@@ -6,6 +6,7 @@ package com.jparkbro.core.designsystem.icon
  * 새 아이콘 추가 시 Icons.kt → IconMapper.kt → 이 목록 순서로 추가하세요.
  */
 val CategoryIcons: List<String> = listOf(
+    "ic_alert",
     "ic_fork_spoon",
     "ic_restaurant",
     "ic_lunch_dining",
@@ -47,6 +48,5 @@ val CategoryIcons: List<String> = listOf(
     "ic_cake",
     "ic_credit_card",
     "ic_timer",
-    "ic_alert",
     "ic_edit",
 )
