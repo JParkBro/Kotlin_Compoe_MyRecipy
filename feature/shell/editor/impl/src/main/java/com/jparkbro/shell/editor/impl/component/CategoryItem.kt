@@ -24,7 +24,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import com.jparkbro.core.designsystem.icon.RestaurantIcon
 import com.jparkbro.core.designsystem.theme.IconSize
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Spacing
 
 @Composable
@@ -74,7 +74,7 @@ internal fun CategoryItem(
 @Composable
 private fun CategoryItemPreview() {
     var isSelected by remember { mutableStateOf(false) }
-    MyRecipyTheme {
+    MyReceiptTheme {
         Row {
             CategoryItem(
                 icon = RestaurantIcon,

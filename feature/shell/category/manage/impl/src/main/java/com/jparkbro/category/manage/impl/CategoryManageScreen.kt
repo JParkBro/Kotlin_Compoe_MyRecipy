@@ -29,12 +29,12 @@ import com.jparkbro.category.manage.impl.component.HierarchyInfo
 import com.jparkbro.core.designsystem.R
 import com.jparkbro.core.designsystem.icon.AddIcon
 import com.jparkbro.core.designsystem.theme.Border
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Spacing
 import com.jparkbro.core.model.type.EditorType
 import com.jparkbro.core.ui.component.BackStackTopAppBar
-import com.jparkbro.core.ui.component.MyRecipyConfirmDialog
+import com.jparkbro.core.ui.component.MyReceiptConfirmDialog
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
@@ -78,7 +78,7 @@ private fun CategoryManageScreen(
     onAction: (CategoryManageAction) -> Unit
 ) {
     if (state.deletingCategoryId != null) {
-        MyRecipyConfirmDialog(
+        MyReceiptConfirmDialog(
             title = stringResource(R.string.category_delete_title),
             message = stringResource(R.string.category_delete_message),
             confirmText = stringResource(R.string.delete),
@@ -147,7 +147,7 @@ private fun CategoryManageScreen(
 @Preview(showBackground = true)
 @Composable
 private fun CategoryManageScreenPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         CategoryManageScreen(
             state = CategoryManageState(),
             onAction = {}

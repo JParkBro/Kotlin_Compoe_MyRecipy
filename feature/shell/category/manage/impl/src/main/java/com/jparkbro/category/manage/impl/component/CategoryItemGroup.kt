@@ -21,7 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.jparkbro.core.designsystem.icon.toImageVector
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Spacing
 import com.jparkbro.core.model.ui.CategoryUiModel
@@ -86,7 +86,7 @@ internal fun CategoryItemGroup(
 @Preview(showBackground = true)
 @Composable
 private fun CategoryItemGroupPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         CategoryItemGroup(
             category = CategoryUiModel(id = 1L, parentId = null, title = "식비", iconName = "ic_fork_spoon"),
             subCategories = listOf(

@@ -1,6 +1,5 @@
 package com.jparkbro.category.editor.impl.component
 
-import com.jparkbro.core.ui.component.EditorFormSection
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -20,7 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.jparkbro.core.designsystem.icon.ForkSpoonIcon
 import com.jparkbro.core.designsystem.theme.Border
 import com.jparkbro.core.designsystem.theme.IconSize
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Shape
 
@@ -59,7 +58,7 @@ internal fun SelectableIconItem(
 @Preview(showBackground = true)
 @Composable
 private fun SelectableIconItemPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         SelectableIconItem(
             icon = ForkSpoonIcon,
             isSelected = true,

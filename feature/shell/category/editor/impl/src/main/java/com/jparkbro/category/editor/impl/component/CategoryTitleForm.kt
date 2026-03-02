@@ -24,7 +24,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import com.jparkbro.core.designsystem.R
 import com.jparkbro.core.designsystem.theme.Border
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Shape
 
@@ -87,7 +87,7 @@ internal fun CategoryTitleForm(
 @Preview(showBackground = true)
 @Composable
 private fun CategoryTitleFormPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         CategoryTitleForm(
             categoryNameState = TextFieldState(),
             onDone = {}

@@ -1,6 +1,5 @@
 package com.jparkbro.category.editor.impl.component
 
-import com.jparkbro.core.ui.component.EditorFormSection
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -13,7 +12,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -23,8 +21,9 @@ import androidx.compose.ui.unit.dp
 import com.jparkbro.core.designsystem.R
 import com.jparkbro.core.designsystem.icon.CategoryIcons
 import com.jparkbro.core.designsystem.icon.toImageVector
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Spacing
+import com.jparkbro.core.ui.component.EditorFormSection
 import com.jparkbro.core.ui.layout.rememberGridInfo
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -89,7 +88,7 @@ internal fun IconSelectorSection(
 @Preview(showBackground = true)
 @Composable
 private fun IconSelectorSectionPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         IconSelectorSection(
             selectedIconName = "ic_fork_spoon",
             onIconSelected = {},

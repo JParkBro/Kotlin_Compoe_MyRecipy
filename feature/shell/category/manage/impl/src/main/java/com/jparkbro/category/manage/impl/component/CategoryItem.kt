@@ -32,7 +32,7 @@ import com.jparkbro.core.designsystem.icon.KeyboardArrowUpIcon
 import com.jparkbro.core.designsystem.icon.RestaurantIcon
 import com.jparkbro.core.designsystem.theme.Border
 import com.jparkbro.core.designsystem.theme.IconSize
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Shape
 import com.jparkbro.core.designsystem.theme.Spacing
@@ -128,7 +128,7 @@ internal fun CategoryItem(
 @Composable
 private fun CategoryItemPreview() {
     var isExpanded by remember { mutableStateOf(false) }
-    MyRecipyTheme {
+    MyReceiptTheme {
         Column(
             verticalArrangement = Arrangement.spacedBy(Spacing.XXS)
         ) {

@@ -31,7 +31,7 @@ import com.jparkbro.core.designsystem.icon.SettingsOutlineIcon
 import com.jparkbro.core.designsystem.icon.toImageVector
 import com.jparkbro.core.designsystem.theme.Border
 import com.jparkbro.core.designsystem.theme.IconSize
-import com.jparkbro.core.designsystem.theme.MyRecipyTheme
+import com.jparkbro.core.designsystem.theme.MyReceiptTheme
 import com.jparkbro.core.designsystem.theme.Padding
 import com.jparkbro.core.designsystem.theme.Shape
 import com.jparkbro.core.designsystem.theme.Spacing
@@ -232,7 +232,7 @@ private fun SubCategoryChip(
 @Preview(showBackground = true)
 @Composable
 private fun CategorySectionPreview() {
-    MyRecipyTheme {
+    MyReceiptTheme {
         CategorySection(
             categories = emptyList(),
             selectedMainCategoryId = null,
