@@ -17,7 +17,7 @@ import androidx.compose.ui.res.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MyRecipyTopAppBar(
+fun MyReceiptTopAppBar(
     modifier: Modifier = Modifier,
     @StringRes titleRes: Int? = null,
     navigationIcon: ImageVector? = null,
@@ -51,6 +51,6 @@ fun MyRecipyTopAppBar(
             actions?.invoke()
         },
         colors = colors,
-        modifier = modifier.testTag("myRecipyTopAppBar"),
+        modifier = modifier.testTag("myReceiptTopAppBar"),
     )
 }

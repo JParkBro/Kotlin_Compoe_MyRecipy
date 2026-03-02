@@ -1,20 +1,21 @@
 [versions]
 agp = "9.0.0"
+activityCompose = "1.12.4"
+androidTools = "32.0.1"
+appcompat = "1.7.1"
 appUpdate = "2.1.0"
-activityCompose = "1.12.3"
-androidTools = "32.0.0"
 coreKtx = "1.17.0"
 coreSplashscreen = "1.2.0"
-credentials = "1.6.0-rc01"
-composeBom = "2026.01.01"
+credentials = "1.6.0-rc02"
+composeBom = "2026.02.01"
 desugarJdkLibs = "2.1.5"
 espressoCore = "3.7.0"
 googleid = "1.2.0"
 junit = "4.13.2"
 junitVersion = "1.3.0"
-jetbrainsKotlinJvm = "2.3.0"
+jetbrainsKotlinJvm = "2.3.10"
 ksp = "2.3.4"
-kotlin = "2.3.0"
+kotlin = "2.3.10"
 koin = "4.2.0-RC1"
 kotlinxSerializationCore = "1.10.0"
 kotlinxSerializationJson = "1.10.0"
@@ -25,20 +26,19 @@ ktorClientCore = "3.4.0"
 ktorClientLogging = "3.4.0"
 ktorSerializationKotlinxJson = "3.4.0"
 lifecycleRuntimeKtx = "2.10.0"
-material3AdaptiveNav3 = "1.3.0-alpha07"
-navigation3Runtime = "1.1.0-alpha03"
+material = "1.13.0"
+material3AdaptiveNav3 = "1.3.0-alpha09"
+navigation3Runtime = "1.1.0-alpha05"
 room = "2.8.4"
 uiComposeMaterial3 = "0.10.0"
 
 # Project versions
-projectApplicationId = "com.jparkbro.myrecipy"
+projectApplicationId = "com.jparkbro.myreceipt"
 projectVersionCode = "1"
 projectVersionName = "1.0.0"
 projectMinSdkVersion = "28"
 projectTargetSdkVersion = "36"
 projectCompileSdkVersion = "36"
-appcompat = "1.7.1"
-material = "1.13.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -103,15 +103,15 @@ jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrai
 room = { id = "androidx.room", version.ref = "room" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
-myrecipy-android-application = { id = "myrecipy.android.application", version = "unspecified" }
-myrecipy-android-application-compose = { id = "myrecipy.android.application.compose", version = "unspecified" }
-myrecipy-android-library = { id = "myrecipy.android.library", version = "unspecified" }
-myrecipy-android-library-compose = { id = "myrecipy.android.library.compose", version = "unspecified" }
-myrecipy-android-feature-api = { id = "myrecipy.android.feature.api", version = "unspecified" }
-myrecipy-android-feature-impl = { id = "myrecipy.android.feature.impl", version = "unspecified" }
-myrecipy-android-room = { id = "myrecipy.android.room", version = "unspecified" }
-myrecipy-jvm-library = { id = "myrecipy.jvm.library", version = "unspecified" }
-myrecipy-jvm-ktor = { id = "myrecipy.jvm.ktor", version = "unspecified" }
+myreceipt-android-application = { id = "myreceipt.android.application", version = "unspecified" }
+myreceipt-android-application-compose = { id = "myreceipt.android.application.compose", version = "unspecified" }
+myreceipt-android-library = { id = "myreceipt.android.library", version = "unspecified" }
+myreceipt-android-library-compose = { id = "myreceipt.android.library.compose", version = "unspecified" }
+myreceipt-android-feature-api = { id = "myreceipt.android.feature.api", version = "unspecified" }
+myreceipt-android-feature-impl = { id = "myreceipt.android.feature.impl", version = "unspecified" }
+myreceipt-android-room = { id = "myreceipt.android.room", version = "unspecified" }
+myreceipt-jvm-library = { id = "myreceipt.jvm.library", version = "unspecified" }
+myreceipt-jvm-ktor = { id = "myreceipt.jvm.ktor", version = "unspecified" }
 
 [bundles]
 compose = [

@@ -22,7 +22,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MyRecipy"
+rootProject.name = "MyReceipt"
 
 include(":app")
 include(":core:data")

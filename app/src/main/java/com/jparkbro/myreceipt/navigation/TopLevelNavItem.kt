@@ -1,4 +1,4 @@
-package com.jparkbro.myrecipy.navigation
+package com.jparkbro.myreceipt.navigation
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
