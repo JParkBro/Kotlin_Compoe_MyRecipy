@@ -34,7 +34,7 @@ uiComposeMaterial3 = "0.10.0"
 
 # Project versions
 projectApplicationId = "com.jparkbro.myreceipt"
-projectVersionCode = "1"
+projectVersionCode = "4"
 projectVersionName = "1.0.0"
 projectMinSdkVersion = "28"
 projectTargetSdkVersion = "36"

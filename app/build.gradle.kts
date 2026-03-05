@@ -38,13 +38,13 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    //	- Splash Screen
+    // Splash Screen
     implementation(libs.androidx.core.splashscreen)
 
-    //	- Oss Licenses
+    // Oss Licenses
     implementation(libs.ui.compose.material3)
 
-    //	- In App Update
+    // In App Update
     implementation(libs.app.update)
     implementation(libs.app.update.ktx)
 }

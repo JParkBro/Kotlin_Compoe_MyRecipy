@@ -57,6 +57,8 @@ internal fun Project.configureApplicationBuildTypes(
             }
             getByName("release") {
                 configureReleaseBuildType(this@apply, appVersion, apiKey)
+                isMinifyEnabled = true
+                isShrinkResources = true
                 signingConfig = signingConfigs.getByName("release")
             }
         }
@@ -81,7 +83,6 @@ private fun BuildType.configureReleaseBuildType(
     buildConfigField("String", "API_KEY", "\"$apiKey\"")
     buildConfigField("String", "BASE_URL", "\"https://\"")
 
-    isMinifyEnabled = false
     proguardFiles(
         commonExtension.getDefaultProguardFile("proguard-android-optimize.txt"),
         "proguard-rules.pro"
